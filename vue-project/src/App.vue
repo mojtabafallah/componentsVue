@@ -1,6 +1,7 @@
 <script>
 import ButtonItem from './components/ButtonItem.vue';
 import ChildComponent from './components/ChildComponent.vue';
+import LoadingHandeler from './components/LoadingHandeler.vue';
 import PostsList from './components/PostsList.vue';
 
 export default{
@@ -35,13 +36,23 @@ export default{
               }
             }
           ],
-          parentCount:0
+          parentCount:0,
+          show:false,
+          titleLoading: 'Show loading'
         };
     },
-    components: { PostsList, ButtonItem, ChildComponent },
+    components: { PostsList, ButtonItem, ChildComponent, LoadingHandeler },
     methods:{
-      onAdd(){
-        this.parentCount += 2;
+      onAdd(value){
+        this.parentCount += value;
+      },
+      showLoading(value){        
+        this.show = value
+        this.titleLoading = "Loading.."
+        setTimeout(()=>{
+          this.show =false;
+          this.titleLoading =  "show loading";
+        },3000)        
       }
     }
 }
@@ -54,4 +65,6 @@ export default{
 <hr />
 <p>parent count: {{ parentCount }}</p>
 <ChildComponent @add="onAdd"></ChildComponent>
+<p v-if="this.show">loading</p>
+<LoadingHandeler @show="showLoading" :title="titleLoading"></LoadingHandeler>
 </template>

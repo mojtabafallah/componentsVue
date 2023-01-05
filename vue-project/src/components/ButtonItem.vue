@@ -17,13 +17,13 @@ export default {
     color: {
       type: String,
       default: 'green'
-    },
-    methods: {
+    }
+  },
+  methods: {
       test() {
         console.log("123");
       }
     }
-  }
 }
 </script>
 <template>

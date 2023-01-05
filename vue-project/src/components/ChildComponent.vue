@@ -4,7 +4,7 @@ export default{
     methods:{
         adder(){
             this.countChild ++;
-            this.$emit('add')
+            this.$emit('add',3)
             console.log("tetssss");
         }
     },
