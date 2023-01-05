@@ -42,5 +42,6 @@ export default{
 <template>
 <posts-list :list="posts"></posts-list>
 <ButtonItem :color="'red'" :size="'large'"></ButtonItem>
+<ButtonItem color="green" size="small"></ButtonItem>
 <ButtonItem></ButtonItem>
 </template>

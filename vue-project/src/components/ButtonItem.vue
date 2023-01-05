@@ -6,13 +6,22 @@ export default {
     }
   },
   props: {
+    title: {
+      type: String,
+      required: true
+    },
     size: {
       type: String,
       default: 'medium'
     },
-    color:{
+    color: {
       type: String,
       default: 'green'
+    },
+    methods: {
+      test() {
+        console.log("123");
+      }
     }
   }
 }
@@ -20,9 +29,9 @@ export default {
 <template>
   {{ size }}
   {{ color }}
-  <button :class="[size, color]">{{ size }}</button>
+  <button :class="[size, color]" @click="test">{{ size }} . {{ color }}</button>
 </template>
-<style>
+<style scoped>
 .red {
   background-color: red;
 }
