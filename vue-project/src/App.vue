@@ -1,5 +1,6 @@
 <script>
 import ButtonItem from './components/ButtonItem.vue';
+import ChildComponent from './components/ChildComponent.vue';
 import PostsList from './components/PostsList.vue';
 
 export default{
@@ -33,10 +34,16 @@ export default{
                 family : "hasani"
               }
             }
-          ]
+          ],
+          parentCount:0
         };
     },
-    components: { PostsList, ButtonItem }
+    components: { PostsList, ButtonItem, ChildComponent },
+    methods:{
+      onAdd(){
+        this.parentCount += 2;
+      }
+    }
 }
 </script>
 <template>
@@ -44,4 +51,7 @@ export default{
 <ButtonItem :color="'red'" :size="'large'"></ButtonItem>
 <ButtonItem color="green" size="small"></ButtonItem>
 <ButtonItem></ButtonItem>
+<hr />
+<p>parent count: {{ parentCount }}</p>
+<ChildComponent @add="onAdd"></ChildComponent>
 </template>
