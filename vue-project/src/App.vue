@@ -1,7 +1,6 @@
 <script>
+import ButtonItem from './components/ButtonItem.vue';
 import PostsList from './components/PostsList.vue';
-
-
 
 export default{
     data() {
@@ -17,29 +16,31 @@ export default{
               }
             },
             {
-              id:"1",
-              title: "posts1",
+              id:"2",
+              title: "posts2",
               des:"description",
               user:{
-                name:"ali",
-                family : "alavi"
+                name:"reza",
+                family : "rezaee"
               }
             },
             {
-              id:"1",
-              title: "posts1",
+              id:"3",
+              title: "posts3",
               des:"description",
               user:{
-                name:"ali",
-                family : "alavi"
+                name:"hasan",
+                family : "hasani"
               }
             }
           ]
         };
     },
-    components: { PostsList }
+    components: { PostsList, ButtonItem }
 }
 </script>
 <template>
 <posts-list :list="posts"></posts-list>
+<ButtonItem :color="'red'" :size="'large'"></ButtonItem>
+<ButtonItem></ButtonItem>
 </template>
