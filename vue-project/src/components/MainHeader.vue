@@ -10,7 +10,7 @@ export default{
 <template>
     <ul>
         <li>
-            <router-link to="posts">posts</router-link>
+            <router-link :to="{name: 'posts'}">posts</router-link>
         </li>
         <li>
             <router-link to="/">Home</router-link>
