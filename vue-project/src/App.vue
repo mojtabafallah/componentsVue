@@ -65,6 +65,7 @@ export default{
 <hr />
 <p>parent count: {{ parentCount }}</p>
 <ChildComponent @add="onAdd"></ChildComponent>
+<hr />
 <p v-if="this.show">loading</p>
 <LoadingHandeler @show="showLoading" :title="titleLoading"></LoadingHandeler>
 </template>
