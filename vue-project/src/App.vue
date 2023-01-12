@@ -59,7 +59,7 @@ export default {
 </script>
 <template>
   <MainHeader></MainHeader>
-<router-view></router-view>
+  <router-view></router-view>
 
    <!--  <posts-list :list="posts"></posts-list>
 <ButtonItem :color="'red'" :size="'large'"></ButtonItem>
